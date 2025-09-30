@@ -50,3 +50,10 @@ Visit `http://localhost:3000` to use the app.
 ## API
 
 - `GET /api/books/lookup/{isbn}/` - Lookup book by ISBN
+
+## Development Notes
+
+- Backend runs on port 8000
+- Frontend runs on port 3000  
+- Use `./start-dev.sh` to start both servers
+- Make sure to run migrations: `python manage.py migrate`
