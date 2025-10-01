@@ -29,7 +29,8 @@ export default function Home() {
     setBookData(null);
 
     try {
-      const response = await fetch(`http://localhost:8000/api/books/lookup/${encodeURIComponent(isbn)}/`);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/books/lookup/${encodeURIComponent(isbn)}/`);
       
       if (!response.ok) {
         const errorData = await response.json();
