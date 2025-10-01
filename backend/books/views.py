@@ -5,6 +5,14 @@ from .services import ISBNLookupService
 
 
 @api_view(['GET'])
+def health_check(request):
+    """
+    Health check endpoint.
+    """
+    return Response({'status': 'ok', 'message': 'Backend is running'})
+
+
+@api_view(['GET'])
 def lookup_isbn(request, isbn):
     """
     Lookup book information by ISBN.
